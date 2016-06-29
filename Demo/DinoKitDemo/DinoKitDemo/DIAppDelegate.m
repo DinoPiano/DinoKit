@@ -1,22 +1,33 @@
 //
-//  AppDelegate.m
+//  DIAppDelegate.m
 //  DinoKitDemo
 //
 //  Created by xjf on 16/6/29.
 //  Copyright © 2016年 Dino. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "DIAppDelegate.h"
+#import "DIRootViewController.h"
 
-@interface AppDelegate ()
+@interface DIAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation DIAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    DIRootViewController *root = [[DIRootViewController alloc] init];
+    
+    self.rootNaviController = [[UINavigationController alloc] init];
+    [self.rootNaviController pushViewController:root animated:YES];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.rootNaviController;
+    self.window.backgroundColor = [UIColor grayColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

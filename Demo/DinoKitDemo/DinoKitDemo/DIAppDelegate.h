@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  DIAppDelegate.h
 //  DinoKitDemo
 //
 //  Created by xjf on 16/6/29.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface DIAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) UINavigationController *rootNaviController;
 
 @end
 

@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		22D8AE7C1D239F02001991CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE7B1D239F02001991CA /* main.m */; };
-		22D8AE7F1D239F02001991CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE7E1D239F02001991CA /* AppDelegate.m */; };
-		22D8AE821D239F02001991CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE811D239F02001991CA /* ViewController.m */; };
-		22D8AE851D239F02001991CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D8AE831D239F02001991CA /* Main.storyboard */; };
+		22D8AE7F1D239F02001991CA /* DIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE7E1D239F02001991CA /* DIAppDelegate.m */; };
 		22D8AE871D239F02001991CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D8AE861D239F02001991CA /* Assets.xcassets */; };
 		22D8AE8A1D239F02001991CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D8AE881D239F02001991CA /* LaunchScreen.storyboard */; };
 		22D8AE951D239F02001991CA /* DinoKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE941D239F02001991CA /* DinoKitDemoTests.m */; };
 		22D8AEA01D239F03001991CA /* DinoKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AE9F1D239F03001991CA /* DinoKitDemoUITests.m */; };
+		22D8AEAF1D23A53D001991CA /* DIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEAE1D23A53D001991CA /* DIRootViewController.m */; };
+		22D8AEB61D23BBEC001991CA /* DIAlertViewExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEB51D23BBEC001991CA /* DIAlertViewExample.m */; };
+		22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEB81D23C229001991CA /* DIAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +38,8 @@
 /* Begin PBXFileReference section */
 		22D8AE771D239F02001991CA /* DinoKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinoKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D8AE7B1D239F02001991CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22D8AE7D1D239F02001991CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		22D8AE7E1D239F02001991CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		22D8AE801D239F02001991CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22D8AE811D239F02001991CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		22D8AE841D239F02001991CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22D8AE7D1D239F02001991CA /* DIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIAppDelegate.h; sourceTree = "<group>"; };
+		22D8AE7E1D239F02001991CA /* DIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIAppDelegate.m; sourceTree = "<group>"; };
 		22D8AE861D239F02001991CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22D8AE891D239F02001991CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22D8AE8B1D239F02001991CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +49,12 @@
 		22D8AE9B1D239F03001991CA /* DinoKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinoKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D8AE9F1D239F03001991CA /* DinoKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinoKitDemoUITests.m; sourceTree = "<group>"; };
 		22D8AEA11D239F03001991CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D8AEAD1D23A53D001991CA /* DIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIRootViewController.h; sourceTree = "<group>"; };
+		22D8AEAE1D23A53D001991CA /* DIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIRootViewController.m; sourceTree = "<group>"; };
+		22D8AEB41D23BBEC001991CA /* DIAlertViewExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIAlertViewExample.h; sourceTree = "<group>"; };
+		22D8AEB51D23BBEC001991CA /* DIAlertViewExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIAlertViewExample.m; sourceTree = "<group>"; };
+		22D8AEB71D23C229001991CA /* DIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIAlertView.h; sourceTree = "<group>"; };
+		22D8AEB81D23C229001991CA /* DIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,11 @@
 		22D8AE791D239F02001991CA /* DinoKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				22D8AE7D1D239F02001991CA /* AppDelegate.h */,
-				22D8AE7E1D239F02001991CA /* AppDelegate.m */,
-				22D8AE801D239F02001991CA /* ViewController.h */,
-				22D8AE811D239F02001991CA /* ViewController.m */,
-				22D8AE831D239F02001991CA /* Main.storyboard */,
-				22D8AE861D239F02001991CA /* Assets.xcassets */,
-				22D8AE881D239F02001991CA /* LaunchScreen.storyboard */,
-				22D8AE8B1D239F02001991CA /* Info.plist */,
+				22D8AE7D1D239F02001991CA /* DIAppDelegate.h */,
+				22D8AE7E1D239F02001991CA /* DIAppDelegate.m */,
+				22D8AEAD1D23A53D001991CA /* DIRootViewController.h */,
+				22D8AEAE1D23A53D001991CA /* DIRootViewController.m */,
+				22D8AEB01D23BA12001991CA /* AlertView */,
 				22D8AE7A1D239F02001991CA /* Supporting Files */,
 			);
 			path = DinoKitDemo;
@@ -117,7 +118,10 @@
 		22D8AE7A1D239F02001991CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22D8AE881D239F02001991CA /* LaunchScreen.storyboard */,
+				22D8AE8B1D239F02001991CA /* Info.plist */,
 				22D8AE7B1D239F02001991CA /* main.m */,
+				22D8AE861D239F02001991CA /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +142,17 @@
 				22D8AEA11D239F03001991CA /* Info.plist */,
 			);
 			path = DinoKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		22D8AEB01D23BA12001991CA /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				22D8AEB41D23BBEC001991CA /* DIAlertViewExample.h */,
+				22D8AEB51D23BBEC001991CA /* DIAlertViewExample.m */,
+				22D8AEB71D23C229001991CA /* DIAlertView.h */,
+				22D8AEB81D23C229001991CA /* DIAlertView.m */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +217,13 @@
 		22D8AE6F1D239F02001991CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DI;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Dino;
 				TargetAttributes = {
 					22D8AE761D239F02001991CA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UD4P775TKY;
 					};
 					22D8AE8F1D239F02001991CA = {
 						CreatedOnToolsVersion = 7.3;
@@ -245,7 +262,6 @@
 			files = (
 				22D8AE8A1D239F02001991CA /* LaunchScreen.storyboard in Resources */,
 				22D8AE871D239F02001991CA /* Assets.xcassets in Resources */,
-				22D8AE851D239F02001991CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D8AE821D239F02001991CA /* ViewController.m in Sources */,
-				22D8AE7F1D239F02001991CA /* AppDelegate.m in Sources */,
+				22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */,
+				22D8AE7F1D239F02001991CA /* DIAppDelegate.m in Sources */,
+				22D8AEAF1D23A53D001991CA /* DIRootViewController.m in Sources */,
 				22D8AE7C1D239F02001991CA /* main.m in Sources */,
+				22D8AEB61D23BBEC001991CA /* DIAlertViewExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +326,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		22D8AE831D239F02001991CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22D8AE841D239F02001991CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		22D8AE881D239F02001991CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -413,10 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DinoKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DinoDemo.DinoKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DinoKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DinoDemo.DinoKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

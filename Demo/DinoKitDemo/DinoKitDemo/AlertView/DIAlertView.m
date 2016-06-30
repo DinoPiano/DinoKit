@@ -8,9 +8,16 @@
 
 #import "DIAlertView.h"
 
+#define SIDE_SPACE      50
+#define CONTENT_ANGLE   10
+#define CONTENT_WIDTH   ([UIScreen mainScreen].bounds.size.width - 2 * SIDE_SPACE)
+#define TEXT_COLOR      [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0]
+#define LINE_COLOR      [UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1.0]
+
 @interface DIAlertView ()
 
 @property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) UIView *buttonsView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *messageLabel;
 
@@ -29,6 +36,7 @@
         self.frame = [UIScreen mainScreen].bounds;
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         [self addSubview:self.contentView];
+        [self.contentView addSubview:self.buttonsView];
         if (title && title.length > 0)
         {
             [self createTitleLabel:title];
@@ -60,23 +68,34 @@
         for (int i = 0; i < titles.count; i++)
         {
             UIView *line = [[UIView alloc] init];
-            line.frame = CGRectMake(0, y, self.contentView.frame.size.width, 0.5);
-            line.backgroundColor = [UIColor colorWithRed:204 green:204 blue:204 alpha:1.0];
-            [self.contentView addSubview:line];
+            line.frame = CGRectMake(0, y, self.contentView.frame.size.width, 1.0);
+            line.backgroundColor = LINE_COLOR;
+            [self.buttonsView addSubview:line];
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTitle:titles[i] forState:UIControlStateNormal];
-            button.titleLabel.textColor = [UIColor colorWithRed:51 green:51 blue:51 alpha:1.0];
+            [button setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
             button.frame = CGRectMake(0, y, self.contentView.frame.size.width, 44);
-            [self.contentView addSubview:button];
+            button.tag = i;
+            [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self.buttonsView addSubview:button];
             
             y += 44;
         }
         
-        CGFloat height = y;
-        self.contentView.frame = CGRectMake(50, (self.frame.size.height - height)/2, self.frame.size.width - 2*50, height);
+        self.buttonsView.frame = CGRectMake(0, 0, self.frame.size.width - 2 * SIDE_SPACE, y);
         
-        // adssa
+        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [cancelBtn setTitle:cancelButtonTitle forState:UIControlStateNormal];
+        [cancelBtn setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
+        cancelBtn.backgroundColor = [UIColor whiteColor];
+        cancelBtn.layer.cornerRadius = CONTENT_ANGLE;
+        cancelBtn.frame = CGRectMake(0, y + 10, CONTENT_WIDTH, 44);
+        cancelBtn.tag = titles.count;
+        [self.contentView addSubview:cancelBtn];
+        
+        CGFloat height = y + 44 + 10;
+        self.contentView.frame = CGRectMake(SIDE_SPACE, (self.frame.size.height - height)/2, CONTENT_WIDTH, height);
         
     }
     
@@ -89,11 +108,22 @@
     if (!_contentView)
     {
         _contentView = [[UIView alloc] init];
-        _contentView.frame = CGRectMake(0, 0, 100, 100);
-        _contentView.backgroundColor = [UIColor whiteColor];
-        _contentView.layer.cornerRadius = 20;
+        _contentView.frame = CGRectMake(0, 0, CONTENT_WIDTH, 100);
+        _contentView.backgroundColor = [UIColor clearColor];
     }
     return _contentView;
+}
+
+- (UIView *)buttonsView
+{
+    if (!_buttonsView)
+    {
+        _buttonsView = [[UIView alloc] init];
+        _buttonsView.frame = CGRectMake(SIDE_SPACE, 0, CONTENT_WIDTH, 100);
+        _buttonsView.backgroundColor = [UIColor whiteColor];
+        _buttonsView.layer.cornerRadius = CONTENT_ANGLE;
+    }
+    return _buttonsView;
 }
 
 - (void)createTitleLabel:(NSString *)title
@@ -102,10 +132,10 @@
     self.titleLabel.frame = CGRectMake(0, 0, 50, 50);
     self.titleLabel.font = [UIFont systemFontOfSize:17];
     self.titleLabel.text = title;
-    self.titleLabel.textColor = [UIColor colorWithRed:51 green:51 blue:51 alpha:1.0];
+    self.titleLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0];
     [self.titleLabel sizeToFit];
-    self.titleLabel.frame = CGRectMake((self.frame.size.width - self.titleLabel.frame.size.width)/2.0, 25, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
-    [self.contentView addSubview:self.titleLabel];
+    self.titleLabel.frame = CGRectMake((CONTENT_WIDTH - self.titleLabel.frame.size.width)/2.0, 25, self.titleLabel.frame.size.width, self.titleLabel.frame.size.height);
+    [self.buttonsView addSubview:self.titleLabel];
 }
 
 - (void)createMessageLabel:(NSString *)message
@@ -114,15 +144,24 @@
     self.messageLabel.frame = CGRectMake(0, 0, 50, 50);
     self.messageLabel.font = [UIFont systemFontOfSize:13];
     self.messageLabel.text = message;
-    self.messageLabel.textColor = [UIColor colorWithRed:51 green:51 blue:51 alpha:1.0];
+    self.messageLabel.textColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0];
     [self.messageLabel sizeToFit];
     CGFloat y = 25;
     if (self.titleLabel && self.titleLabel.superview)
     {
         y = CGRectGetMaxY(self.titleLabel.frame) + 10;
     }
-    self.messageLabel.frame = CGRectMake((self.frame.size.width - self.messageLabel.frame.size.width)/2.0, y, self.messageLabel.frame.size.width, self.messageLabel.frame.size.height);
-    [self.contentView addSubview:self.messageLabel];
+    self.messageLabel.frame = CGRectMake((CONTENT_WIDTH - self.messageLabel.frame.size.width)/2.0, y, self.messageLabel.frame.size.width, self.messageLabel.frame.size.height);
+    [self.buttonsView addSubview:self.messageLabel];
+}
+
+#pragma mark - Button Delegate
+- (void)buttonClick:(UIButton *)button
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)])
+    {
+        [self.delegate alertView:self clickedButtonAtIndex:button.tag];
+    }
 }
 
 @end

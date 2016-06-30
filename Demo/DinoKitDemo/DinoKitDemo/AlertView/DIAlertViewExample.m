@@ -7,6 +7,7 @@
 //
 
 #import "DIAlertViewExample.h"
+#import "DIAlertView.h"
 
 @interface DIAlertViewExample ()
 
@@ -19,17 +20,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    UIAlertView
-    
-    - (instancetype)initWithTitle:(nullable NSString *)title message:(nullable NSString *)message delegate:(nullable id /*<UIAlertViewDelegate>*/)delegate cancelButtonTitle:(nullable NSString *)cancelButtonTitle otherButtonTitles:(nullable NSString *)otherButtonTitles, ...
-    
-    
-    UIActionSheet
-    
-    
-    - (instancetype)initWithTitle:(nullable NSString *)title delegate:(nullable id<UIActionSheetDelegate>)delegate cancelButtonTitle:(nullable NSString *)cancelButtonTitle destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle otherButtonTitles:(nullable NSString *)otherButtonTitles, ...
-    
+    DIAlertView *alertView = [[DIAlertView alloc] initWithTitle:@"TITLE" message:@"message" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"1",@"2",@"3",@"4",nil];
+    [self.view addSubview:alertView];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -76,7 +76,7 @@
         CGFloat height = y;
         self.contentView.frame = CGRectMake(50, (self.frame.size.height - height)/2, self.frame.size.width - 2*50, height);
         
-        // adssafafsa
+        // adssa
         
     }
     

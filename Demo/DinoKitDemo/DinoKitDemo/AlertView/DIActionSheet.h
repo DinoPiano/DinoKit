@@ -1,24 +1,24 @@
 //
-//  DIAlertView.h
+//  DIActionSheet.h
 //  DinoKitDemo
 //
-//  Created by xjf on 16/6/29.
+//  Created by xjf on 16/7/1.
 //  Copyright © 2016年 Dino. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class DIAlertView;
+@class DIActionSheet;
 
-@protocol DIAlertViewDelegate <NSObject>
+@protocol DIActionSheetDelegate <NSObject>
 
-- (void)alertView:(DIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)actionSheet:(DIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
 
-@interface DIAlertView : UIView
+@interface DIActionSheet : UIView
 
-@property (nonatomic, weak) id<DIAlertViewDelegate> delegate;
+@property (nonatomic, weak) id<DIActionSheetDelegate> delegate;
 
 - (instancetype)initWithTitle:(NSString *)title
                       message:(NSString *)message

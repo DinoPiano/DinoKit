@@ -57,6 +57,7 @@
         va_start(args, otherButtonTitles);
         if (otherButtonTitles)
         {
+            [titles addObject:otherButtonTitles];
             NSString *btnTitle;
             while ((btnTitle = va_arg(args, NSString *)))
             {
@@ -78,6 +79,7 @@
             button.frame = CGRectMake(0, y, self.contentView.frame.size.width, 44);
             button.tag = i;
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(changeBackgroundColor:) forControlEvents:UIControlEventTouchDown];
             [self.buttonsView addSubview:button];
             
             y += 44;
@@ -85,21 +87,32 @@
         
         self.buttonsView.frame = CGRectMake(0, 0, self.frame.size.width - 2 * SIDE_SPACE, y);
         
-        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [cancelBtn setTitle:cancelButtonTitle forState:UIControlStateNormal];
-        [cancelBtn setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
-        cancelBtn.backgroundColor = [UIColor whiteColor];
-        cancelBtn.layer.cornerRadius = CONTENT_ANGLE;
-        cancelBtn.frame = CGRectMake(0, y + 10, CONTENT_WIDTH, 44);
-        cancelBtn.tag = titles.count;
-        [self.contentView addSubview:cancelBtn];
+        if (cancelButtonTitle && cancelButtonTitle.length > 0)
+        {
+            UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [cancelBtn setTitle:cancelButtonTitle forState:UIControlStateNormal];
+            [cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            cancelBtn.backgroundColor = [UIColor whiteColor];
+            cancelBtn.layer.cornerRadius = CONTENT_ANGLE;
+            cancelBtn.frame = CGRectMake(0, y + 10, CONTENT_WIDTH, 44);
+            cancelBtn.tag = titles.count;
+            [cancelBtn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self.contentView addSubview:cancelBtn];
+            y += 44 + 10;
+        }
         
-        CGFloat height = y + 44 + 10;
-        self.contentView.frame = CGRectMake(SIDE_SPACE, (self.frame.size.height - height)/2, CONTENT_WIDTH, height);
-        
+        self.contentView.frame = CGRectMake(SIDE_SPACE, (self.frame.size.height - y)/2, CONTENT_WIDTH, y);
     }
     
     return self;
+}
+
+- (void)show
+{
+    if (self)
+    {
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+    }
 }
 
 #pragma mark - View Elements
@@ -162,6 +175,11 @@
     {
         [self.delegate alertView:self clickedButtonAtIndex:button.tag];
     }
+}
+
+- (void)changeBackgroundColor:(UIButton *)button
+{
+    button.backgroundColor = [UIColor grayColor];
 }
 
 @end

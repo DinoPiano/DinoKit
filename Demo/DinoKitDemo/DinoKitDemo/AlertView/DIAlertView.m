@@ -80,6 +80,8 @@
             button.tag = i;
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
             [button addTarget:self action:@selector(changeBackgroundColor:) forControlEvents:UIControlEventTouchDown];
+//            [button addTarget:self action:@selector(changeBackgroundColor:) forControlEvents:UIControlEventTouchDragEnter];
+            [button addTarget:self action:@selector(changeBgViewClear:) forControlEvents:UIControlEventTouchUpOutside];
             [self.buttonsView addSubview:button];
             
             y += 44;
@@ -89,15 +91,23 @@
         
         if (cancelButtonTitle && cancelButtonTitle.length > 0)
         {
+            UIView *cancelView = [[UIView alloc] init];
+            cancelView.frame = CGRectMake(0, y + 10, CONTENT_WIDTH, 44);
+            cancelView.backgroundColor = [UIColor whiteColor];
+            cancelView.layer.cornerRadius = CONTENT_ANGLE;
+            [self.contentView addSubview:cancelView];
+            
             UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             [cancelBtn setTitle:cancelButtonTitle forState:UIControlStateNormal];
             [cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             cancelBtn.backgroundColor = [UIColor whiteColor];
             cancelBtn.layer.cornerRadius = CONTENT_ANGLE;
-            cancelBtn.frame = CGRectMake(0, y + 10, CONTENT_WIDTH, 44);
+            cancelBtn.frame = CGRectMake(0, 0, cancelView.frame.size.width, cancelView.frame.size.height);
             cancelBtn.tag = titles.count;
             [cancelBtn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-            [self.contentView addSubview:cancelBtn];
+            [cancelBtn addTarget:self action:@selector(changeBackgroundColor:) forControlEvents:UIControlEventTouchDown];
+            [cancelBtn addTarget:self action:@selector(changeBgViewClear:) forControlEvents:UIControlEventTouchUpOutside];
+            [cancelView addSubview:cancelBtn];
             y += 44 + 10;
         }
         
@@ -179,7 +189,12 @@
 
 - (void)changeBackgroundColor:(UIButton *)button
 {
-    button.backgroundColor = [UIColor grayColor];
+    button.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+}
+
+- (void)changeBgViewClear:(UIButton *)button
+{
+    button.backgroundColor = [UIColor clearColor];
 }
 
 @end

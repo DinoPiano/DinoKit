@@ -17,6 +17,8 @@
 		22D8AEAF1D23A53D001991CA /* DIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEAE1D23A53D001991CA /* DIRootViewController.m */; };
 		22D8AEB61D23BBEC001991CA /* DIAlertViewExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEB51D23BBEC001991CA /* DIAlertViewExample.m */; };
 		22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEB81D23C229001991CA /* DIAlertView.m */; };
+		22E875421D2A623D00233FC6 /* DCFAutoFitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */; };
+		22E875451D2A627B00233FC6 /* btn_all_clear_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E875441D2A627B00233FC6 /* btn_all_clear_image@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		22D8AEB51D23BBEC001991CA /* DIAlertViewExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIAlertViewExample.m; sourceTree = "<group>"; };
 		22D8AEB71D23C229001991CA /* DIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIAlertView.h; sourceTree = "<group>"; };
 		22D8AEB81D23C229001991CA /* DIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIAlertView.m; sourceTree = "<group>"; };
+		22E875401D2A623D00233FC6 /* DCFAutoFitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFAutoFitTextView.h; sourceTree = "<group>"; };
+		22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFAutoFitTextView.m; sourceTree = "<group>"; };
+		22E875441D2A627B00233FC6 /* btn_all_clear_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_all_clear_image@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +113,13 @@
 		22D8AE791D239F02001991CA /* DinoKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				22E875431D2A627200233FC6 /* Images */,
 				22D8AE7D1D239F02001991CA /* DIAppDelegate.h */,
 				22D8AE7E1D239F02001991CA /* DIAppDelegate.m */,
 				22D8AEAD1D23A53D001991CA /* DIRootViewController.h */,
 				22D8AEAE1D23A53D001991CA /* DIRootViewController.m */,
 				22D8AEB01D23BA12001991CA /* AlertView */,
+				22E8753F1D2A623500233FC6 /* TextView */,
 				22D8AE7A1D239F02001991CA /* Supporting Files */,
 			);
 			path = DinoKitDemo;
@@ -158,6 +165,23 @@
 				22015BF81D26112D00161EFA /* DIActionSheet.m */,
 			);
 			path = AlertView;
+			sourceTree = "<group>";
+		};
+		22E8753F1D2A623500233FC6 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				22E875401D2A623D00233FC6 /* DCFAutoFitTextView.h */,
+				22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		22E875431D2A627200233FC6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				22E875441D2A627B00233FC6 /* btn_all_clear_image@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D8AE8A1D239F02001991CA /* LaunchScreen.storyboard in Resources */,
+				22E875451D2A627B00233FC6 /* btn_all_clear_image@2x.png in Resources */,
 				22D8AE871D239F02001991CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */,
+				22E875421D2A623D00233FC6 /* DCFAutoFitTextView.m in Sources */,
 				22D8AE7F1D239F02001991CA /* DIAppDelegate.m in Sources */,
 				22D8AEAF1D23A53D001991CA /* DIRootViewController.m in Sources */,
 				22D8AE7C1D239F02001991CA /* main.m in Sources */,

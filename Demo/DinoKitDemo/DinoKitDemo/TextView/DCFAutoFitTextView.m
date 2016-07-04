@@ -20,15 +20,32 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        self.text = @"test";
         
+//        [self sizeToFit];
+//        self.frame = self.frame;
+
         
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.borderColor = [UIColor blackColor].CGColor;
+        self.layer.borderWidth = 1;
+        
+
     }
     return self;
 }
 
-- (void)drawRect:(CGRect)rect
-{
-    
-}
+//- (CGSize)sizeThatFits:(CGSize)size
+//{
+//    CGSize size1 = size;
+//    
+//    return size1;
+//}
+
+
+//- (void)drawRect:(CGRect)rect
+//{
+//    
+//}
 
 @end

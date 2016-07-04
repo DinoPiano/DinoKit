@@ -25,6 +25,7 @@
     self.classNames = [NSMutableArray array];
     
     [self addCell:@"AlertView in Mid" class:@"DIAlertViewExample"];
+    [self addCell:@"auto text view" class:@"DIAutoFitTextViewExample"];
     [self.tableView reloadData];
 }
 

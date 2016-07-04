@@ -19,6 +19,7 @@
 		22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D8AEB81D23C229001991CA /* DIAlertView.m */; };
 		22E875421D2A623D00233FC6 /* DCFAutoFitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */; };
 		22E875451D2A627B00233FC6 /* btn_all_clear_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E875441D2A627B00233FC6 /* btn_all_clear_image@2x.png */; };
+		F8A45E4F1D2A71F9006AE0AB /* DIAutoFitTextViewExample.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A45E4E1D2A71F9006AE0AB /* DIAutoFitTextViewExample.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		22E875401D2A623D00233FC6 /* DCFAutoFitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFAutoFitTextView.h; sourceTree = "<group>"; };
 		22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFAutoFitTextView.m; sourceTree = "<group>"; };
 		22E875441D2A627B00233FC6 /* btn_all_clear_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_all_clear_image@2x.png"; sourceTree = "<group>"; };
+		F8A45E4D1D2A71F9006AE0AB /* DIAutoFitTextViewExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIAutoFitTextViewExample.h; sourceTree = "<group>"; };
+		F8A45E4E1D2A71F9006AE0AB /* DIAutoFitTextViewExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIAutoFitTextViewExample.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 		22E8753F1D2A623500233FC6 /* TextView */ = {
 			isa = PBXGroup;
 			children = (
+				F8A45E4D1D2A71F9006AE0AB /* DIAutoFitTextViewExample.h */,
+				F8A45E4E1D2A71F9006AE0AB /* DIAutoFitTextViewExample.m */,
 				22E875401D2A623D00233FC6 /* DCFAutoFitTextView.h */,
 				22E875411D2A623D00233FC6 /* DCFAutoFitTextView.m */,
 			);
@@ -318,6 +323,7 @@
 			files = (
 				22D8AEB91D23C229001991CA /* DIAlertView.m in Sources */,
 				22E875421D2A623D00233FC6 /* DCFAutoFitTextView.m in Sources */,
+				F8A45E4F1D2A71F9006AE0AB /* DIAutoFitTextViewExample.m in Sources */,
 				22D8AE7F1D239F02001991CA /* DIAppDelegate.m in Sources */,
 				22D8AEAF1D23A53D001991CA /* DIRootViewController.m in Sources */,
 				22D8AE7C1D239F02001991CA /* main.m in Sources */,
